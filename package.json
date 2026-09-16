@@ -1,0 +1,29 @@
+{
+  "name": "linguabridge-ai-workspace",
+  "version": "1.0.0",
+  "description": "LinguaBridge AI — Break language barriers. Instantly. Production-grade AI Translation Platform for ProStackHub Internship Task 1.",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"blue,cyan\" \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "build": "npm run build --prefix backend && npm run build --prefix frontend",
+    "test": "npm run test --prefix backend && npm run test --prefix frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "keywords": [
+    "translation",
+    "ai",
+    "gemini",
+    "linguabridge",
+    "prostackhub",
+    "web-speech-api"
+  ],
+  "author": "Sakthibalan - ProStackHub AI Intern",
+  "license": "MIT"
+}

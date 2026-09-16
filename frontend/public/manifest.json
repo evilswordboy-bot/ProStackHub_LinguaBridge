@@ -1,0 +1,33 @@
+{
+  "short_name": "LinguaBridge",
+  "name": "LinguaBridge AI — Multilingual Translator",
+  "description": "Break language barriers. Instantly. Production-grade AI translation preserving formatting, lists, and structure.",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0B1020",
+  "theme_color": "#0B1020",
+  "display": "standalone",
+  "orientation": "portrait",
+  "categories": ["productivity", "tools", "utilities"],
+  "lang": "en",
+  "dir": "ltr"
+}

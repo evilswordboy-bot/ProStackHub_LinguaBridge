@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">LinguaBridge AI</string>
+    <string name="title_activity_main">LinguaBridge AI</string>
+    <string name="package_name">ai.linguabridge.app</string>
+    <string name="custom_url_scheme">ai.linguabridge.app</string>
+</resources>
