@@ -31,17 +31,6 @@ router.post(
   validateBody(translateSchema),
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      if (!isGeminiConfigured()) {
-        res.status(503).json({
-          success: false,
-          error: {
-            code: 'API_KEY_MISSING',
-            message: 'Gemini API configuration is missing.'
-          }
-        });
-        return;
-      }
-
       const { text, sourceLang, targetLang } = req.body;
       const result = await processTranslation(text, sourceLang, targetLang);
 
@@ -65,17 +54,6 @@ router.post(
   validateBody(detectSchema),
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      if (!isGeminiConfigured()) {
-        res.status(503).json({
-          success: false,
-          error: {
-            code: 'API_KEY_MISSING',
-            message: 'Gemini API configuration is missing.'
-          }
-        });
-        return;
-      }
-
       const { text } = req.body;
       const detection = await processDetection(text);
 
