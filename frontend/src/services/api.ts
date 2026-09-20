@@ -94,7 +94,13 @@ export async function requestTranslation(
         'Content-Type': 'application/json',
         Accept: 'application/json'
       },
-      body: JSON.stringify({ text, sourceLang, targetLang }),
+      body: JSON.stringify({
+        text,
+        sourceLang,
+        targetLang,
+        sourceLanguage: sourceLang,
+        targetLanguage: targetLang
+      }),
       signal: controller.signal
     });
 
@@ -103,7 +109,7 @@ export async function requestTranslation(
     const json = await res.json();
 
     if (!res.ok || !json.success) {
-      const errMsg = json?.error?.message || 'Translation service is temporarily unavailable.';
+      const errMsg = json?.error?.message || 'Translation failed. Please try again.';
       const errCode = json?.error?.code || 'TRANSLATION_ERROR';
       throw new ApiError(errMsg, errCode);
     }
@@ -118,7 +124,7 @@ export async function requestTranslation(
       throw err;
     }
     throw new ApiError(
-      err.message || 'Cannot connect to translation backend. Ensure backend server is running.',
+      'Unable to connect to the translation service.',
       'NETWORK_ERROR'
     );
   }

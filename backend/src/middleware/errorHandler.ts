@@ -22,9 +22,9 @@ export function errorHandler(
     success: false,
     error: {
       code: err.code || 'INTERNAL_SERVER_ERROR',
-      message: statusCode === 500 && isProd
-        ? 'Translation service is temporarily unavailable. Please try again.'
-        : err.message || 'An unexpected error occurred.'
+      message: statusCode === 500
+        ? 'Translation failed. Please try again.'
+        : err.message || 'Translation failed. Please try again.'
     }
   });
 }

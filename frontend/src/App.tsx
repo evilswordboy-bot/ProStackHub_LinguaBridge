@@ -109,7 +109,7 @@ export const App: React.FC = () => {
   const handleTranslate = useCallback(async () => {
     const trimmed = sourceText.trim();
     if (!trimmed) {
-      setErrorMessage('Please enter text to translate.');
+      setErrorMessage('Please enter some text to translate.');
       return;
     }
 
